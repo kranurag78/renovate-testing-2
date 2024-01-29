@@ -1,14 +1,19 @@
+# renovate: datasource=github-tags depName=kubernetes-sigs/cluster-api
+CLUSTERCTL_VERSION ?= v1.6.0
+# renovate: datasource=github-tags depName=helm/helm
+HELM_VERSION ?= v3.13.2
+# renovate: datasource=github-tags depName=kubernetes-sigs/kind
+KIND_VERSION ?= v0.19.0
+
 CLUSTERCTL := $(abspath $(TOOLS_BIN_DIR)/clusterctl)
 clusterctl: $(CLUSTERCTL) ## Build a local copy of clusterctl
 $(CLUSTERCTL):
-	# renovate: datasource=github-tags depName=kubernetes-sigs/cluster-api versioning=semver
 	curl -sSLf https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.6.0/clusterctl-$$(go env GOOS)-$$(go env GOARCH) -o $(CLUSTERCTL)
 	chmod a+rx $(CLUSTERCTL)
 
 HELM := $(abspath $(TOOLS_BIN_DIR)/helm)
 helm: $(HELM) ## Build a local copy of helm
 $(HELM):
-	# renovate: datasource=github-tags depName=helm/helm versioning=semver
 	curl -sSL https://get.helm.sh/helm-v3.13.2-linux-amd64.tar.gz | tar xz -C $(TOOLS_BIN_DIR) --strip-components=1 linux-amd64/helm
 	chmod a+rx $(HELM)
 
