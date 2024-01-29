@@ -1,0 +1,28 @@
+{
+  "extends": [
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":disableRateLimiting",
+    ":semanticCommits",
+    "helpers:pinGitHubActionDigests",
+    "mergeConfidence:all-badges",
+    "github>kranurag78/renovate-testing//.github/renovate/groups.json5",
+    "github>kranurag78/renovate-testing//.github/renovate/regexManagers.json5"
+  ],
+  "baseBranches": ["main"],
+  "timezone": "Europe/Berlin",
+  "dependencyDashboardTitle": "Dependency Dashboard 🤖",
+  "dependencyDashboardHeader": "",
+  "prFooter": "",
+  "suppressNotifications": ["prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "commitBodyTable": true,
+  "prHourlyLimit": 1,
+  "printConfig": true,
+  "pruneStaleBranches": true,
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "separateMinorPatch": true,
+  "enabledManagers": ["dockerfile", "gomod", "github-actions", "custom.regex"],
+  "recreateWhen": "always"
+  }
