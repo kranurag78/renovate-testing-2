@@ -5,7 +5,6 @@
       "fileMatch": [
         ".yaml$",
         ".yml$",
-        "Makefile",
         "(^|/|.)Dockerfile$",
         "(^|/)Dockerfile[^/]*$"
       ],

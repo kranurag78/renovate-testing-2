@@ -6,11 +6,8 @@
       matchUpdateTypes: ["major", "minor", "patch"],
       "matchDepNames": [
         "kubernetes-sigs/kustomize",
-        "tilt-dev/tilt",
-        "tilt-dev/ctlptl",
         "kubernetes-sigs/cluster-api",
         "kubernetes-sigs/kind",
-        "hashicorp/packer",
         "aquasecurity/trivy",
         "helm/helm"
       ],
