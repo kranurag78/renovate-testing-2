@@ -1,7 +1,7 @@
 # renovate: datasource=github-tags depName=kubernetes-sigs/cluster-api
 CLUSTERCTL_VERSION ?= v1.6.0
 # renovate: datasource=github-tags depName=helm/helm
-HELM_VERSION ?= v3.13.2
+HELM_VERSION ?= v3.13.3
 # renovate: datasource=github-tags depName=kubernetes-sigs/kind
 KIND_VERSION ?= v0.19.0
 
