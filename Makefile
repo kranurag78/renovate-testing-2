@@ -3,7 +3,7 @@ CLUSTERCTL_VERSION ?= v1.6.0
 # renovate: datasource=github-tags depName=helm/helm
 HELM_VERSION ?= v3.14.0
 # renovate: datasource=github-tags depName=kubernetes-sigs/kind
-KIND_VERSION ?= v0.19.0
+KIND_VERSION ?= v0.20.0
 
 CLUSTERCTL := $(abspath $(TOOLS_BIN_DIR)/clusterctl)
 clusterctl: $(CLUSTERCTL) ## Build a local copy of clusterctl
