@@ -32,5 +32,6 @@
   "separateMinorPatch": true,
   "enabledManagers": ["dockerfile", "gomod", "github-actions", "custom.regex"],
   "recreateWhen": "always",
-  "reviewers": ["kranurag78"]
+  "reviewers": ["kranurag78"],
+  "labels": ["dependencies", "Container"]
   }
