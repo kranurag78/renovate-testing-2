@@ -1,0 +1,28 @@
+name: Verify Pull Request
+on: 
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+jobs:
+  pr-verify:
+    runs-on: ubuntu-latest
+    name: Verify Pull Request
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.0.11
+
+      - name: Install renovate
+        run: bun install -g renovate@37.203.1 # TODO update this via renovatebot
+
+      - name: Validate config
+        run: |
+          for file in $(find . -name "*.json5"); do
+            renovate-config-validator ${file}
+          done

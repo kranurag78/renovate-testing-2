@@ -4,7 +4,7 @@
     ":semanticPrefixFixDepsChoreOthers",
     ":disableRateLimiting",
     ":semanticCommits",
-    "helpers:pinGitHubActionDigests",
+    "helpers:pinGitHubActionDigests", // pin github actions
     "mergeConfidence:all-badges",
     "github>kranurag78/renovate-testing-2//.github/renovate/groups.json5",
     "github>kranurag78/renovate-testing-2//.github/renovate/regexManagers.json5",
@@ -31,5 +31,6 @@
   "separateMultipleMajor": true,
   "separateMinorPatch": true,
   "enabledManagers": ["dockerfile", "gomod", "github-actions", "custom.regex"],
-  "recreateWhen": "always"
+  "recreateWhen": "always",
+  "reviewers": ["kranurag78"]
   }
