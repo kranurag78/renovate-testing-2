@@ -13,13 +13,13 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Install Node
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
-          bun-version: 1.0.11
+          node-version: "18"
 
       - name: Install renovate
-        run: bun install -g renovate@37.203.1 # TODO update this via renovatebot
+        run: npm install -g renovate@37.203.1 # TODO update this via renovatebot
 
       - name: Validate config
         run: |
@@ -32,7 +32,7 @@ jobs:
         id: generate-token
         with:
           app-id: ${{ secrets.BUMPING_BOT_APP_ID }}
-          private-key: ${{ secrets.BUMPING_BOT_APP_PRIVATE_KEY }}
+          private-key: ${{ secrets.BUMPING_BOT_PRIVATE_KEY }}
 
       - name: Generate Labels
         uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9 # v5
