@@ -1,1 +1,1 @@
-FROM alpine:3.19 as alpine
+FROM alpine:3.23 as alpine
